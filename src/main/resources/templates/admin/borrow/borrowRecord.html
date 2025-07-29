@@ -1,0 +1,36 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>图书管理系统</title>
+    <!--  引入共同的样式文件  -->
+    <th:block th:include="~{include/common-css::imports}"></th:block>
+</head>
+<body>
+<div id="app">
+    <backend-layout :content-component="BorrowRecordManager"></backend-layout>
+</div>
+<!-- 引入 Vue、Element UI 等公用js文件-->
+<th:block th:include="~{include/common-js::common-js}"></th:block>
+
+<!-- 引入组件文件 -->
+<script src="/views/admin/borrow/borrow/BorrowRecordQueryForm.js"></script>
+<script src="/views/admin/borrow/borrow/BorrowDialog.js"></script>
+<script src="/views/admin/borrow/borrow/BorrowRecordTable.js"></script>
+<script src="/views/admin/borrow/borrow/BorrowRecordManager.js"></script>
+
+<script>
+    const {createApp, reactive, ref, onMounted} = Vue;
+    const app = {
+        components: {
+            BackendLayout
+        },
+        setup() {
+            return {BorrowRecordManager}
+        }
+    }
+    createApp(app).use(ElementPlus, {
+        locale: ElementPlusLocaleZhCn
+    }).mount('#app');
+</script>
+
+</body>
+</html>

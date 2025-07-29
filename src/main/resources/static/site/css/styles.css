@@ -1,0 +1,525 @@
+body {
+    margin: 0;
+    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+    font-family: "微软雅黑", "PingFang SC", "Arial", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.el-container {
+    height: 100vh;
+}
+
+.el-header,
+.el-aside {
+    background-color: #344a5f;
+    color: white;
+}
+
+.el-header {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    height: 70px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+}
+
+.el-header h1 {
+    margin: 0 auto;
+}
+
+.el-aside {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease;
+}
+
+.el-aside.collapsed {
+    width: 64px;
+}
+
+.el-main {
+    background-color: white;
+    padding: 20px;
+}
+
+.el-footer {
+    background-color: #e9ecef;
+    text-align: center;
+    padding: 10px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 10px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.sidebar-header {
+    padding: 20px;
+    text-align: center;
+}
+
+.sidebar-header img {
+    width: 60px;
+    height: 60px;
+}
+
+.el-menu {
+    flex: 1;
+    border-right: none;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.role {
+    margin-right: 10px;
+}
+
+.username {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.search-area {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    width: 200px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.button-area {
+    margin-bottom: 20px;
+}
+
+.separator {
+    margin: 0 10px;
+    color: white;
+}
+
+
+
+/*文件上传按钮样式*/
+/* 新增外层容器样式 */
+.inline-file-group {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* 控制标签与按钮间距 */
+}
+
+/* 修改原有.file-input样式 */
+.file-input {
+    margin: 0; /* 去除原有上下margin */
+}
+
+/* 保持原有按钮样式不变 */
+.file-input label {
+    /* 原有样式保持不变 */
+    display: inline-block;
+    padding: 1px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.file-input label:hover {
+    background-color: #45a049;
+}
+
+/* 新增图标间距 */
+.file-input i {
+    margin-right: 6px;
+}
+
+/* 修改后的样式 */
+.file-input input[type="file"] {
+    position: absolute;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+
+/*借书对话框*/
+.container {
+    padding: 32px 40px 24px 40px;
+    background: #f7f8fa;
+    /*min-height: 100vh;*/
+}
+.row-card {
+    display: flex;
+    align-items: center;
+    padding: 16px 28px 10px;
+    background: #fff;
+    border-radius: 8px;
+}
+.row-shadow {
+    border: 1.5px solid #dcdfe6;
+}
+.label {
+    color: #606266;
+    font-size: 15px;
+    margin-right: 6px;
+    min-width: 80px;
+    display: inline-block;
+}
+.input-main {
+    width: 100px;
+    margin-right: 12px;
+}
+.search-btn {
+    background: #409eff;
+    color: #fff;
+    border-color: #409eff;
+    margin-left: 8px;
+}
+.reader-info {
+    background: #f0f9eb;
+    color: #67c23a;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 14px;
+    font-family: 'PingFang SC', Arial, sans-serif;
+}
+.input-copies {
+    width: 320px;
+    margin-left: 6px;
+}
+.hint {
+    color: #909399;
+    font-size: 13px;
+    margin-left: 18px;
+    align-self: center;
+}
+.borrow-table {
+    background: #fafafa;
+    border-radius: 8px;
+    --el-table-border-color: #dcdfe6;
+}
+.th-style {
+    background: #eef6fe !important;
+    color: #606266 !important;
+    font-size: 15px;
+}
+.footer-btns {
+    margin-top: 28px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 24px;
+}
+
+
+/*手机校验码页面*/
+.form-card {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 24px;
+}
+
+
+/*读者后端首页样式*/
+.user-center-container {
+    max-width: 1100px;
+    margin: 30px auto 0;
+    background: #f7f8fa;
+}
+
+.main-card {
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: none !important;
+    /*box-shadow: 0 4px 24px 0 rgba(110, 140, 180, 0.08);*/
+    padding: 12px 32px 24px 32px;
+    border: none;
+}
+
+.breadcrumb {
+    margin-bottom: 16px;
+    color: #8a929a;
+}
+
+.header-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 8px;
+}
+.avatar-gradient {
+    background: linear-gradient(135deg, #98e0da 0%, #45caec 100%);
+    color: #fff;
+    font-weight: bold;
+    font-size: 27px;
+}
+.title {
+    color: #1879dd;
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 2px;
+    letter-spacing: 1px;
+}
+.subtitle {
+    color: #9fc4e0;
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+/* 预期提醒卡片 */
+.reminder-card {
+    margin-bottom: 18px;
+    border-radius: 13px;
+    background: linear-gradient(120deg, #e2f1fc 60%, #ecf7ed 100%);
+    border: 1px solid #e8f1fd;
+    box-shadow: 0 2px 9px #dcebf940;
+    padding: 8px 16px 8px 18px;
+}
+.reminder-title {
+    font-size: 15px;
+    color: #2373cb;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 1px;
+}
+.reminder-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    margin-top: 2px;
+}
+.reminder-list li {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #344d63;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.reminder-type.reminder-due {
+    color: #fa981e;
+    font-weight: 700;
+}
+.reminder-type.reminder-over, .reminder-soon, .reminder-over {
+    color: #d83426;
+    font-weight: 700;
+}
+.reminder-days.reminder-soon {
+    color: #fa981e;
+}
+.reminder-days.reminder-over {
+    color: #d83426;
+}
+.reminder-date {
+    color: #888;
+    font-size: 13px;
+    margin-left: 4px;
+}
+.reminder-book {
+    color: #265eca;
+    font-weight: bold;
+}
+.info-row {
+    margin-bottom: 8px;
+    margin-top: 12px;
+}
+.info-card {
+    border-radius: 12px;
+    min-height: 112px;
+    border: none;
+    background: #f9fafb;
+}
+.green-card {
+    background: linear-gradient(115deg, #e7fbe9 65%, #edfcfa 100%);
+}
+.blue-card {
+    background: linear-gradient(110deg, #e8f1fa 78%, #eefaed 100%);
+}
+.help-card {
+    background: #f7f8fb;
+}
+.info-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 7px;
+    color: #2976f3;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.info-detail {
+    font-size: 15px;
+    color: #222;
+    line-height: 1.7;
+}
+/* 状态标识 */
+.borrow-list {
+    font-size: 15px;
+    line-height: 28px;
+}
+.borrow-status.return { color: #20bf6b; font-weight: 600;}
+.borrow-status.borrow { color: #fa981e; font-weight: 600;}
+.help-text {
+    color: #555;
+    font-size: 14px;
+}
+
+/* 统计卡片 */
+.stat-row {
+    margin: 26px 0 0 0;
+}
+.stat-card {
+    border-radius: 13px;
+    min-height: 75px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 22px;
+    background: #f8fafb;
+    position: relative;
+}
+.blue-stat { background: linear-gradient(105deg, #e9f3fe 0%, #f3fafd 100%);}
+.green-stat { background: linear-gradient(105deg, #e8fbe8 0%, #f8fafc 100%);}
+.orange-stat {background: linear-gradient(105deg, #fff4e0 0%, #f9f3ea 100%);}
+.stat-card .el-icon {
+    font-size: 25px;
+    margin-bottom: 6px;
+    color: #227ee7;
+}
+.green-stat .el-icon { color: #20bf6b;}
+.orange-stat .el-icon { color: #fa981e;}
+.stat-num {
+    font-size: 27px;
+    font-weight: bold;
+    color: #232d32;
+}
+.stat-unit {
+    font-size: 15px;
+    color: #fa981e;
+    margin-left: 2px;
+}
+.stat-title {
+    font-size: 15px;
+    color: #474e4d;
+    margin-top: -3px;
+}
+.info-row .el-col {
+    display: flex;
+}
+.info-card {
+    min-height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+/*管理页主页样式*/
+.dashboard-page {
+    padding: 28px 28px 18px 28px;
+}
+.dashboard-welcome {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.avatar-admin {
+    background: linear-gradient(130deg, #5c9afb, #13d3b4);
+    color: #fff;
+}
+.welcome-title {
+    color: #226fae;
+    font-size: 22px;
+    font-weight: bold;
+}
+.welcome-role {
+    color: #8ab3ea;
+    font-size: 14px;
+    margin-top: 2px;
+}
+.dashboard-row {
+    margin-bottom: 18px;
+}
+.stat-card {
+    border-radius: 15px;
+    padding: 18px 14px 14px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 98px;
+    margin-bottom: 0;
+    box-shadow: 0 2px 10px #aaccf91a;
+    border: none;
+}
+.stat-blue { background: linear-gradient(110deg,#ecf3fa,#e0f3fa);}
+.stat-green { background: linear-gradient(110deg,#e7faee,#eafaf9);}
+.stat-orange { background: linear-gradient(110deg,#fdf6e4,#eceefc);}
+.stat-red { background: linear-gradient(110deg,#ffecec,#f8edeb);}
+.stat-purple { background: linear-gradient(110deg,#eae8f7,#e2edfa);}
+.stat-num { color:#217edf; font-size: 28px; font-weight: bold;}
+.stat-card .el-icon { font-size: 27px; margin-bottom: 3px; }
+.stat-desc { font-size: 14px; color: #555; margin-top: 4px;}
+
+.alert-card {
+    margin: 14px 0 20px 0;
+    border-radius: 11px;
+    background: linear-gradient(100deg,#fff2ea 80%, #fcf8e6 100%);
+    border: none;
+    color: #e26b0a;
+    font-weight: 500;
+    padding: 12px 20px;
+    font-size: 16px;
+    box-shadow: 0 2px 10px #f9d3a250;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.alert-icon { font-size: 22px; color: #e26b0a;}
+.alert-title { font-size: 15px; margin-right: 7px; }
+.alert-msg { margin-right: 18px; }
+
+.quick-row .quick-card {
+    border-radius:12px; background: #f6f9fc;
+    cursor: pointer; text-align: center;
+    color: #217edf; font-weight: bold;
+    padding: 22px 4px 12px; border: none;
+    transition: background 0.3s, box-shadow 0.2s;
+}
+.quick-row .quick-card:hover {
+    background: #e3f2fd;
+    box-shadow: 0 2px 12px #bad0ef1a;
+}
+.quick-icon { font-size: 23px; margin-bottom: 8px;}
+.quick-title { font-size: 15px; }
+
+.activity-card {
+    margin-top: 22px;
+    border-radius: 12px; background: #f7fafb; border:none;
+    min-height: 174px; box-shadow: 0 2px 8px #bcdcf74a;
+}
+.activity-title {
+    font-size: 16px; font-weight: 700; color: #217edf; margin-bottom: 10px;
+}

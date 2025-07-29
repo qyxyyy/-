@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>图书管理系统</title>
+    <link rel="stylesheet" href="/assets/element-plus/index.css">
+    <link rel="stylesheet" href="/assets/fontawesome-free-6.7.2/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/site/css/styles.css">
+</head>
+<body>
+<div id="app">
+   <verify-code-form></verify-code-form>
+</div>
+<!-- 引入 Vue -->
+<script src="/assets/vue/vue3.min.js"></script>
+<script src="/assets/element-plus/index.full.js"></script>
+<!-- 引入 ElementPlus 图标 -->
+<script src="https://unpkg.com/@element-plus/icons-vue@2.1.0/dist/index.iife.js"></script>
+<!-- 引入 Axios -->
+<script src="/assets/axios/axios.min.js"></script>
+<script src="/tools/axios-instance.js"></script>
+<script src="/tools/notification.js"></script>
+<script src="/tools/js-tools.js"></script>
+
+<!-- 引入组件 -->
+<script src="/site/js/VerifyCode/VerifyCodeForm.js"></script>
+
+<script>
+    const {createApp, reactive, ref, onMounted} = Vue;
+
+    const app = {
+        // 使用局部注册的方式注册组件
+        components: {
+            VerifyCodeForm
+        },
+        setup() {
+        }
+    }
+    createApp(app).use(ElementPlus).mount('#app');
+</script>
+
+</body>
+</html>

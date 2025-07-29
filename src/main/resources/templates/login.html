@@ -1,0 +1,44 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>用户登录</title>
+    <!--  引入共同的样式文件  -->
+    <th:block th:include="~{include/common-css::imports}"></th:block>
+    <link rel="stylesheet" type="text/css" href="/site/css/login.css">
+</head>
+<body>
+<div id="app">
+    <login></login>
+</div>
+<!-- 引入 Vue、Element UI 等公用js文件-->
+<!-- 引入 Vue -->
+<script src="/assets/vue/vue3.min.js"></script>
+<script src="/assets/element-plus/index.full.js"></script>
+<!-- 引入 ElementPlus 图标 -->
+<script src="https://unpkg.com/@element-plus/icons-vue@2.1.0/dist/index.iife.js"></script>
+<!-- 引入 Axios -->
+<script src="/assets/axios/axios.min.js"></script>
+
+<!--  引入本地js工具库-->
+<script src="/tools/axios-instance.js"></script>
+<script src="/tools/notification.js"></script>
+<script src="/tools/js-tools.js"></script>
+
+<!-- 工具类 -->
+<script src="/tools/AuthUtils.js"></script>
+
+<!-- 引入组件 -->
+<script src="/views/login/Login.js"></script>
+<script>
+    const {createApp, reactive, ref} = Vue;
+    // 创建 Vue 应用
+    const app = {
+        components: {
+            Login
+        },
+        setup() {
+        }
+    };
+    createApp(app).use(ElementPlus).mount('#app');
+</script>
+</body>
+</html>

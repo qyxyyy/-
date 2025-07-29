@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.javaee.ch16.mapper.BookCopyMapper">
+
+    <select id="pageQuery" resultType="com.javaee.ch16.domain.vo.BookCopyVo">
+        SELECT c.*, b.title, b.author, b.publisher, b.isbn, r.name AS borrower
+        FROM book_copy c
+        LEFT JOIN book b ON c.book_id = b.book_id
+        LEFT JOIN borrow_record br ON c.copy_id = br.copy_id
+        LEFT JOIN reader r ON br.reader_id = r.reader_id
+        <where>
+            <if test="query.barcode != null and query.barcode != ''">
+                AND c.barcode LIKE CONCAT('%', #{query.barcode}, '%')
+            </if>
+            <if test="query.bookName != null and query.bookName != ''">
+                AND b.title LIKE CONCAT('%', #{query.bookName}, '%')
+            </if>
+            <if test="query.status != null">
+                AND c.status = #{query.status}
+            </if>
+            <if test="query.location != null and query.location != ''">
+                AND c.location LIKE CONCAT('%', #{query.location}, '%')
+            </if>
+        </where>
+        ORDER BY c.created_time DESC
+    </select>
+</mapper>

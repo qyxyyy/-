@@ -1,0 +1,36 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>图书管理系统</title>
+    <!--  引入共同的样式文件  -->
+    <th:block th:include="~{include/common-css::imports}"></th:block>
+</head>
+<body>
+<div id="app">
+    <backend-layout :content-component="ReaderManager"></backend-layout>
+</div>
+<!-- 引入 Vue、Element UI 等公用js文件-->
+<th:block th:include="~{include/common-js::common-js}"></th:block>
+
+<!-- 引入组件文件 -->
+<script src="/views/admin/reader/ReaderQueryForm.js"></script>
+<script src="/views/admin/reader/ReaderForm.js"></script>
+<script src="/views/admin/reader/ReaderTable.js"></script>
+<script src="/views/admin/reader/ReaderManager.js"></script>
+
+<script>
+    const {createApp, reactive, ref, onMounted} = Vue;
+    const app = {
+        components: {
+            BackendLayout
+        },
+        setup() {
+            return {ReaderManager}
+        }
+    }
+    createApp(app).use(ElementPlus, {
+        locale: ElementPlusLocaleZhCn
+    }).mount('#app');</script>
+</script>
+
+</body>
+</html>

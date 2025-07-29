@@ -1,0 +1,31 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>图书管理系统</title>
+  <!--  引入共同的样式文件  -->
+  <th:block th:include="~{include/common-css::imports}"></th:block>
+</head>
+<body>
+<div id="app">
+  <backend-layout :content-component="BookDetails"></backend-layout>
+</div>
+<!-- 引入 Vue、Element UI 等公用js文件-->
+<th:block th:include="~{include/common-js::common-js}"></th:block>
+
+<!-- 引入组件 -->
+<script src="/site/js/book/book/BookDetails.js"></script>
+<script>
+    const {createApp, reactive, ref, onMounted} = Vue;
+    const app = {
+        components: {
+            BackendLayout
+        },
+        setup() {
+            return {BookDetails}
+        }
+    }
+    createApp(app).use(ElementPlus, {
+        locale: ElementPlusLocaleZhCn
+    }).mount('#app');
+</script>
+</body>
+</html>
